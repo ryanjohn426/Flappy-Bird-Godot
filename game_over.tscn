@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cahwfb6onnnq0"]
+
+[ext_resource type="Script" uid="uid://bsma2ghgsxaw6" path="res://game_over.gd" id="1_yxx3c"]
+[ext_resource type="Texture2D" uid="uid://dw7jmadi5tcs6" path="res://assets/game-restart-button-bit-vector-retro-pixel-illustration-interface-development-app-website-s-style-isolated-background-379515563.png" id="2_yxx3c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yxx3c"]
+texture = ExtResource("2_yxx3c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ccer4"]
+texture = ExtResource("2_yxx3c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8u835"]
+texture = ExtResource("2_yxx3c")
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_yxx3c")
+
+[node name="RestartButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.487
+anchor_right = 0.5
+anchor_bottom = 0.487
+offset_left = -167.0
+offset_top = -51.832
+offset_right = -144.0
+offset_bottom = -42.832
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(15, 15)
+theme_override_styles/hover = SubResource("StyleBoxTexture_yxx3c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ccer4")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8u835")
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
